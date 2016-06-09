@@ -1,0 +1,99 @@
+/*
+	Created by Yuval Feldman
+    Website: yuvalfeldman.com \ feldmanyuval.com
+    GitHub: https://github.com/YuvalFeldman
+*/
+/*
+ * General
+ */
+.TrajanFont{
+    font-family: 'TrajanProRegular';
+}
+.FontLightGreen{
+    color: #4a9d4f;
+}
+.FontDarkGreen{
+    color: #0e5c11;
+}
+.FontGrey{
+    color: #a1aea5;
+}
+.FontWhite{
+    color: #ffffff;
+}
+
+/*
+ * General
+ */
+.BackgroundLightGreen{
+    background-color: #4a9d4f;
+}
+
+/*
+ * Web page
+ */
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    height:100%;
+	background:#fff;
+	font-family: 'footlight';
+	margin: 0px;
+    padding: 0px;
+    background-color: #fff; 
+    display: block;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-user-select: none;     
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    -o-user-select: none;
+    user-select: none;
+}
+
+/*
+ * Header Menu
+ */
+
+.MenuOption{
+    height: 6em;
+}
+.CenterMenuOptionsHorizontaly{
+    display: flex;
+    justify-content: center;
+  align-items: flex-end;
+}
+.LineSeperator{
+    margin: 0;
+    padding: 0;
+    height: 2px;
+    width: 100%;
+    display: inline-block;
+}
+
+
+/*
+ * MainContentArea
+ */
+.MainContentArea{
+    min-height: 100%;
+}
+
+/*
+ * Footer
+ */
+.Footer{
+    height: 30em;
+}
+
+.FooterColumn{
+    padding: 5em 0 0 0;
+}
+.FooterHeader{
+}
+.FooterElement{
+    padding: 2em 0 0 0;
+}
