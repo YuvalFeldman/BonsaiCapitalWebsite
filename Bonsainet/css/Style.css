@@ -1,0 +1,243 @@
+/*
+	Created by Yuval Feldman
+    Website: yuvalfeldman.com \ feldmanyuval.com
+    GitHub: https://github.com/YuvalFeldman
+*/
+/*
+ * General
+ */
+.TrajanFont{
+    font-family: 'TrajanProRegular';
+}
+.FontLightGreen{
+    color: #4a9d4f;
+}
+.FontDarkGreen{
+    color: #0e5c11;
+}
+.FontGrey{
+    color: #a1aea5;
+}
+.FontWhite{
+    color: #ffffff;
+}
+.Not_Highlightable{
+    cursor:default;
+}
+.Link{
+    color: #758f9c;
+}
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+.pointer{
+    cursor: pointer;
+}
+.HebrewRightToLeft{
+    text-align: right;
+}
+.EnglishLeftToRight{
+    text-align: Left;
+}
+
+/*
+ * General
+ */
+.BackgroundLightGreen{
+    background-color: #4a9d4f;
+}
+
+/*
+ * Web page
+ */
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    height:100%;
+	background:#fff;
+	font-family: 'footlight';
+	margin: 0px;
+    padding: 0px;
+    background-color: #fff; 
+    display: block;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-user-select: none;     
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    -o-user-select: none;
+    user-select: none;
+    cursor:default;
+}
+
+/*
+ * Header Menu
+ */
+.MainHeader{
+    box-shadow: 0px 0px 1px #888888;
+}
+.MenuOption{
+    height: 6em;
+}
+.CenterMenuOptionsHorizontaly{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+/*
+ * MainContentArea
+ */
+.MainContentArea{
+    min-height: 100%;
+    padding-bottom: 3em;
+}
+.MainPage{
+    min-height: 80%;
+}
+
+/*
+ * Carousel
+ */
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition-property: opacity;
+        }
+        
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .carousel-control {
+        z-index: 2;
+    }
+}
+
+.carousel, 
+.carousel-inner, 
+.carousel-inner .item {
+    height: auto;
+}
+.carouselImg{
+    width: 100%;
+}
+
+/*
+ * 3-set Vectore Images
+ */
+.ThreeSetVectorContainer{
+    text-align: center;
+    padding: 3em 0 3em 0;
+}
+.ThreeVectoreSetImg{
+    width: 140px;
+    height: auto;
+}
+.ThreeVectoreSetTxt{
+    padding: 0;
+    margin: 0;
+}
+/*
+ * 3-set Image Txt
+ */
+.ThreeSetImgTxtContainer{
+    padding: 3em 0 3em 0;
+    min-height: 40em;
+}
+.ThreeSetImgTxtTxtArea{
+    min-height: 15em;
+    padding: 0;
+    margin: 0;
+
+}
+.ThreeSetImgTxtImgArea{
+    padding: 0;
+    margin: 0;
+}
+.ThreeSetImgTxtImg{
+    height: auto;
+    width: 100%;
+}
+
+/*
+ * Main Content Sections
+ */
+.Info{
+    padding: 3em 0 0 0;
+}
+
+.RightOptionHeader{
+}
+.MainSectionHeader{
+    font-weight: bold;
+}
+.MainSectionSmallHeader{
+    padding: 1em 0 1em 0;
+    text-align: center;
+}
+.RightOptionText{
+    margin-left: 10%;
+}
+/*
+ * Contact
+ */
+.ContactArea{
+    padding: 10% 0 3em 0;
+}
+.Connect_Error_Message{
+    color: crimson;
+}
+
+
+/*
+ * Footer
+ */
+.Footer{
+    height: auto;
+}
+.languageDecider{
+    display: inline;
+    text-align: center;
+    padding: 2em 0 0 0;
+    margin: 0;
+}
+
+.FooterColumn{
+    padding: 3em 0 0 0;
+}
+.FooterHeader{
+}
+.FooterElement{
+    padding: 2em 0 0 0;
+}
+.FooterLineSeperator{
+    margin: 2em 0 0 0;
+    padding: 0;
+    height: 2px;
+    width: 70%;
+    display: inline-block;
+    background-color: white;
+}

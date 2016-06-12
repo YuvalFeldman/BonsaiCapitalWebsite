@@ -1,0 +1,46 @@
+<div class="container-fluid ContactArea">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-6 EnglishLeftToRight">
+                    <h2 class="RightOptionHeader">Contact Us Today!</h2>
+                    <h2 class="RightOptionText"><small>Uri Feldman</small></h2>
+                    <h2 class="RightOptionText"><small>Feldmanu@gmail.com</small></h2>
+                    <h2 class="RightOptionText"><small>Bonsai Capital Additional Content?</small></h2>
+                </div>
+                <div class="col-sm-6">
+                    <form name="Connect_Mail_Form" ng-hide="mailSent" class="Connect_Mail_Form" novalidate>
+                        <span class="Connect_Error_Message" ng-show="Connect_Mail_Form.email.$dirty && Connect_Mail_Form.email.$invalid">
+                            <span ng-show="Connect_Mail_Form.email.$error.required">Email is required.</span>
+                            <span ng-show="Connect_Mail_Form.email.$error.email">Invalid email address.</span>
+                        </span>
+                        <span class="Connect_Error_Message" ng-show="Connect_Mail_Form.user.$dirty && Connect_Mail_Form.user.$invalid">
+                            <span ng-show="Connect_Mail_Form.user.$error.required">Username is required.</span>
+                        </span>
+                        <br>
+                        <!-- User Name -->
+                        <input type="text" name="user" class="form-control" ng-model="mailContent.name" placeholder="Name" required>
+                        <!-- end User Name -->
+                        <br>
+                        <!-- User Mail -->
+                        <input type="email" name="email" class="form-control" ng-model="mailContent.mail" placeholder="Mail" required>
+                        <!-- end User Mail -->
+                        <br>
+                        <!-- User Message -->
+                        <textarea type="text" name="message" class="form-control" rows="5" ng-model="mailContent.message" placeholder="Message"></textarea>
+                        <!-- end User Message -->
+                        <br>
+                        <!-- submit button -->
+                        <input class="btn btn-default" type="submit" ng-disabled="Connect_Mail_Form.user.$dirty && Connect_Mail_Form.user.$invalid || Connect_Mail_Form.email.$dirty && Connect_Mail_Form.email.$invalid || !Connect_Mail_Form.user.$dirty || !Connect_Mail_Form.email.$dirty" ng-click="submitMail()">
+                        <!-- end submit button -->
+                    </form>
+                    <div class="alert alert-success" ng-show="mailSent">
+                      <strong>Success!</strong> Indicates a successful or positive action.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
