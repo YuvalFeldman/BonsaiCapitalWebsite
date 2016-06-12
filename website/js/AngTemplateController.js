@@ -2,12 +2,14 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
     $scope.EnglishTemplates = { 
         index: 'Templates/En/index.html',
         about: 'Templates/En/about.html',
-        contact: 'Templates/En/contact.html'
+        contact: 'Templates/En/contact.html',
+        team: 'Templates/En/team.html'
     };
     $scope.HebrewTemplates = { 
         index: 'Templates/He/index.html',
         about: 'Templates/He/about.html',
-        contact: 'Templates/He/contact.html'
+        contact: 'Templates/He/contact.html',
+        team: 'Templates/He/team.html'
     };
     
     $scope.ChosenTemplate = $scope.EnglishTemplates;

@@ -41,12 +41,15 @@
                         <span class="FontDarkGreen">Bonsai</span><span class="FontGrey">Capital</span>
                     </h1>
                 </div>
+
                 <div class="row col-sm-8">
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly">
+                        <h5 class="pointer"><span class="pointer" ng-click="ChangeLanguage('en')"><img class="languageImage" src="img/En.jpg"></span> | <span class="pointer" ng-click="ChangeLanguage('he')"><img class="languageImage" src="img/He.jpg"></span></h5>
+                    </div>
                     <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('about')">
                         <h5 class="pointer">{{TextContent.about}}</h5>
                     </div>
-                    <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('ourteam')">
+                    <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('team')">
                         <h5 class="pointer">{{TextContent.team}}</h5>
                     </div>
                     <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('services')">
@@ -128,9 +131,6 @@
                 
                 
                 <div class="row FooterLineSeperator"></div>
-                <div class="row languageDecider FontWhite">
-                    <p><span class="pointer" ng-click="ChangeLanguage('en')">English</span> | <span class="pointer" ng-click="ChangeLanguage('he')">Hebrew</span></p>
-                </div>
                 <div class="row">
                     <h6>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> {{TextContent.CopyRight}}</h6>
                 </div>

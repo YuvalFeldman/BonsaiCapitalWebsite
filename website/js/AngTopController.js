@@ -54,11 +54,7 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
     };
     
     $scope.TextContent = $scope.TextContentEn;
-    
-    $rootScope.$on("UpdateAllLanguages", function(){
-           $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
-    });
-    
+        
     $scope.UpdateSectionLanguage = function(language){
         switch(language){
             case 'he':
@@ -69,6 +65,13 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
                 break;
         }
     }
+    
+    $scope.ChangeLanguage = function(langauge){
+        GlobalData.SetLanguage(langauge);
+        $scope.UpdateSectionLanguage(langauge);
+        $rootScope.$emit("UpdateAllLanguages", {});
+    }
+
     
     $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
 });

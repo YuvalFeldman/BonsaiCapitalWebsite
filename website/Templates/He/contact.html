@@ -6,11 +6,11 @@
                 <div class="col-sm-6">
                     <form name="Connect_Mail_Form" ng-hide="mailSent" class="Connect_Mail_Form" novalidate>
                         <span class="Connect_Error_Message" ng-show="Connect_Mail_Form.email.$dirty && Connect_Mail_Form.email.$invalid">
-                            <span ng-show="Connect_Mail_Form.email.$error.required">Email is required.</span>
-                            <span ng-show="Connect_Mail_Form.email.$error.email">Invalid email address.</span>
+                            <span ng-show="Connect_Mail_Form.email.$error.required">נדרש להוסיף כתובת מייל.</span>
+                            <span ng-show="Connect_Mail_Form.email.$error.email">נדרש להוסיף כתובת מייל תקינה</span>
                         </span>
                         <span class="Connect_Error_Message" ng-show="Connect_Mail_Form.user.$dirty && Connect_Mail_Form.user.$invalid">
-                            <span ng-show="Connect_Mail_Form.user.$error.required">Username is required.</span>
+                            <span ng-show="Connect_Mail_Form.user.$error.required">נדרש להוסיף שם.</span>
                         </span>
                         <br>
                         <!-- User Name -->
@@ -30,13 +30,13 @@
                         <!-- end submit button -->
                     </form>
                     <div class="alert alert-success" ng-show="mailSent">
-                      <strong>Success!</strong> Indicates a successful or positive action.
+                      <strong>הצלחה!</strong> המייל שלך נשלח.
                     </div>
                 </div>
                 <div class="col-sm-6 HebrewRightToLeft">
                     <h2 class="RightOptionHeader">צרו קשר</h2>
                     <h2 class="RightOptionText"><small>אורי פלדמן</small></h2>
-                    <h2 class="RightOptionText"><small>Feldmanu@gmail.com</small></h2>
+                    <h2 class="RightOptionText"><small>uri@bonsaicapital.com</small></h2>
                     <h2 class="RightOptionText"><small>בונסאי קפיטל - אפשרויות למידה נוסף?</small></h2>
                 </div>
 

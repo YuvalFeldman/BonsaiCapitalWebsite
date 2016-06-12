@@ -88,6 +88,16 @@ body{
     justify-content: center;
     align-items: flex-end;
 }
+.languageDecider{
+    display: inline;
+    text-align: center;
+    padding: 2em 0 0 0;
+    margin: 0;
+}
+.class="languageImage"{
+    width: 14px;
+    height: auto;
+}
 
 
 /*
@@ -183,6 +193,17 @@ body{
 }
 
 /*
+ * Team page
+ */
+.profileImage{
+    width: 15em;
+    height: auto;
+    border-radius: 6px;
+}
+.imageColumn{
+    text-align: center;
+}
+/*
  * Main Content Sections
  */
 .Info{
@@ -217,12 +238,6 @@ body{
  */
 .Footer{
     height: auto;
-}
-.languageDecider{
-    display: inline;
-    text-align: center;
-    padding: 2em 0 0 0;
-    margin: 0;
 }
 
 .FooterColumn{

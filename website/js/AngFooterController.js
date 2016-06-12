@@ -47,12 +47,9 @@ app.controller('AngFooterController', function ($scope, $window, $rootScope, Glo
     
     $scope.TextContent = $scope.TextContentEn;
 
-    
-    $scope.ChangeLanguage = function(langauge){
-        GlobalData.SetLanguage(langauge);
-        $scope.UpdateSectionLanguage(langauge);
-        $rootScope.$emit("UpdateAllLanguages", {});
-    }
+    $rootScope.$on("UpdateAllLanguages", function(){
+           $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
+    });
     
     $scope.UpdateSectionLanguage = function(language){
         switch(language){
