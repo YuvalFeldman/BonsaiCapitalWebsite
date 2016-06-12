@@ -21,6 +21,25 @@
 .FontWhite{
     color: #ffffff;
 }
+.Not_Highlightable{
+    cursor:default;
+}
+.Link{
+    color: #758f9c;
+}
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+.pointer{
+    cursor: pointer;
+}
+.HebrewRightToLeft{
+    text-align: right;
+}
+.EnglishLeftToRight{
+    text-align: Left;
+}
 
 /*
  * General
@@ -52,6 +71,7 @@ body{
     -ms-user-select: none; 
     -o-user-select: none;
     user-select: none;
+    cursor:default;
 }
 
 /*
@@ -165,12 +185,6 @@ body{
     padding: 3em 0 0 0;
 }
 
-.RightHandMenu{
-    text-align: left;
-}
-.MainAreaContentSection{
-    text-align: left;
-}
 .RightOptionHeader{
 }
 .MainSectionHeader{

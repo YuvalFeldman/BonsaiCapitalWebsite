@@ -2,7 +2,8 @@ var app = angular.module('website', ['ngCookies']);
 
 app.factory('GlobalData', function ($cookies) {
 
-    var data = "en"
+    var data = "en";
+    var page = "index";
 
     return {
         GetLanguage: function () {
@@ -18,17 +19,27 @@ app.factory('GlobalData', function ($cookies) {
             if($cookies['Language'] != data && $cookies['Language'] != '' && $cookies['Language'] != null){
                 data = $cookies['Language'];
             }
+        },
+        GetPage: function(){
+            console.log("get " + page);
+            return page;
+        },
+        SetPage: function(setPage){
+            console.log("set " + page);
+            page = setPage;
         }
     };
     
 });
 
-app.controller('TopController', function ($scope, $window, $location, GlobalData) {  
+app.controller('TopController', function ($scope, $window, $location, $rootScope, GlobalData) {  
     
     GlobalData.UpdateLanguage();
     
     $scope.InternalLink = function(link){
-        $window.location.href= "http://bonsaicapital.net/" + link + ".html";
+        console.log("internaltopcalls: " + link);
+        GlobalData.SetPage(link);
+        $rootScope.$emit("ChangePageTemplate", {});
     }
     $scope.TextContentEn = {
         about:'About Us', 
@@ -47,7 +58,11 @@ app.controller('TopController', function ($scope, $window, $location, GlobalData
     
     $scope.TextContent = $scope.TextContentEn;
     
-    $scope.ChangeLanguage = function(language){
+    $rootScope.$on("UpdateAllLanguages", function(){
+           $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
+    });
+    
+    $scope.UpdateSectionLanguage = function(language){
         switch(language){
             case 'he':
                 $scope.TextContent = $scope.TextContentHe;
@@ -58,5 +73,5 @@ app.controller('TopController', function ($scope, $window, $location, GlobalData
         }
     }
     
-    $scope.ChangeLanguage(GlobalData.GetLanguage());
+    $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
 });

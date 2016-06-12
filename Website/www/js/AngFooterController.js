@@ -1,6 +1,7 @@
-app.controller('AngFooterController', function ($scope, $window, GlobalData) {     
+app.controller('AngFooterController', function ($scope, $window, $rootScope, GlobalData) {     
     $scope.InternalLink = function(link){
-        $window.location.href= "http://bonsaicapital.net/" + link + ".html";
+        GlobalData.SetPage(link);
+        $rootScope.$emit("ChangePageTemplate", {});
     }
     
     $scope.TextContentEn = {
@@ -49,10 +50,11 @@ app.controller('AngFooterController', function ($scope, $window, GlobalData) {
     
     $scope.ChangeLanguage = function(langauge){
         GlobalData.SetLanguage(langauge);
-        $window.location.reload();
+        $scope.UpdateSectionLanguage(langauge);
+        $rootScope.$emit("UpdateAllLanguages", {});
     }
     
-    $scope.ChangeLanguageLocal = function(language){
+    $scope.UpdateSectionLanguage = function(language){
         switch(language){
             case 'he':
                 $scope.TextContent = $scope.TextContentHe;
@@ -63,5 +65,5 @@ app.controller('AngFooterController', function ($scope, $window, GlobalData) {
         }
     }
     
-    $scope.ChangeLanguageLocal(GlobalData.GetLanguage());
+    $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
 });

@@ -25,122 +25,46 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/Carousel.js"></script>
         <script src="js/AngTopController.js"></script>
-        <script src="js/AngMainIndex.js"></script>
+        <script src="js/AngTemplateController.js"></script>
         <script src="js/AngFooterController.js"></script>
         <!-- end JS files -->
     </head>
-    <body ng-app="website">
+    <body class="Not_Highlightable" ng-app="website">
         <!-- Main Menu -->
         <div class="container-fluid hidden-xs MainHeader" ng-controller="TopController">
             <div class="row TrajanFont">
-                <div class="col-sm-4 text-center MenuOption CenterMenuOptionsHorizontaly"><h1><span class="FontDarkGreen">Bonsai</span><span class="FontGrey">Capital</span></h1></div>
+                <div class="col-sm-4 text-center MenuOption CenterMenuOptionsHorizontaly">
+                    <h1 class="pointer" ng-click="InternalLink('index')">
+                        <span class="FontDarkGreen">Bonsai</span><span class="FontGrey">Capital</span>
+                    </h1>
+                </div>
                 <div class="row col-sm-8">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('aboutus')"><h5>{{TextContent.about}}</h5></div>
-                <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly"><h5>{{TextContent.team}}</h5></div>
-                <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly"><h5>{{TextContent.services}}</h5></div>
-                <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly"><h5>{{TextContent.market}}</h5></div>
-                <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly"><h5>{{TextContent.contact}}</h5></div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('about')">
+                        <h5 class="pointer">{{TextContent.about}}</h5>
+                    </div>
+                    <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('ourteam')">
+                        <h5 class="pointer">{{TextContent.team}}</h5>
+                    </div>
+                    <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('services')">
+                        <h5 class="pointer">{{TextContent.services}}</h5>
+                    </div>
+                    <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('market')">
+                        <h5 class="pointer">{{TextContent.market}}</h5>
+                    </div>
+                    <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly" ng-click="InternalLink('contact')">
+                        <h5 class="pointer">{{TextContent.contact}}</h5>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- End Main Menu -->
         
-        <!-- Main Menu -->
-        <div class="MainContentArea" ng-controller="MainIndexController">
-            <!-- Picture Carousel -->
-            <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-                <ol class="carousel-indicators hidden-xs">
-                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel" data-slide-to="1"></li>
-                    <li data-target="#carousel" data-slide-to="2"></li>
-                </ol>
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                    <div class="active item"><img class="carouselImg" src="img/1.jpg"></div>
-                    <div class="item"><img class="carouselImg" src="img/2.jpg"></div>
-                    <div class="item"><img class="carouselImg" src="img/3.jpg"></div>
-                </div>
-                <!-- Carousel nav -->
-                <a class="carousel-control left" href="#carousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control right" href="#carousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                </a>
-            </div>
-            <!-- End Picture Carousel -->   
-            
-            <!-- 3-set Vectore Images -->
-            <div class="container-fluid ThreeSetVectorContainer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h1><small>{{TextContent.ThreeVectorSetHeaderOne}}<br>{{TextContent.ThreeVectorSetHeaderTwo}}</small></h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <img class="ThreeVectoreSetImg" src="img/bank.jpg"><br>
-                                <h3 class="ThreeVectoreSetTxt">{{TextContent.ThreeVectorSetBanking}}</h3>
-                            </div>
-                            <div class="col-sm-4">
-                                <img class="ThreeVectoreSetImg" src="img/money.jpg"><br>
-                                <h3 class="ThreeVectoreSetTxt">{{TextContent.ThreeVectorSetFunding}}</h3>
-                            </div>
-                            <div class="col-sm-4">
-                                <img class="ThreeVectoreSetImg" src="img/graph.jpg"><br>
-                                <h3 class="ThreeVectoreSetTxt">{{TextContent.ThreeVectorSetBetterment}}</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
-            </div>
-            <!-- End 3-set Vectore Images -->
-            <!-- 3-set ImageTextBoxes -->
-            <div class="container-fluid ThreeSetImgTxtContainer">
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8">
-                        <div class="row">
-                            <!-- ImageIsDown -->
-                            <div class="col-sm-4">
-                                <div class="ThreeSetImgTxtTxtArea">
-                                    <h4>{{TextContent.ThreeVectorTxtLeftHeader}}</h4><br>
-                                    <p>{{TextContent.ThreeVectorTxtLeftContent}}</p>
-                                </div>
-                                <div class="ThreeSetImgTxtImgArea"><img class="ThreeSetImgTxtImg" src="img/img1.jpg"></div>
-                            </div>
-                            <!-- End ImageIsDown -->
-                            <!-- ImageIsUp -->
-                            <div class="col-sm-4">
-                                <div class="ThreeSetImgTxtImgArea"><img class="ThreeSetImgTxtImg" src="img/img2.jpg"></div>
-                                <div class="ThreeSetImgTxtTxtArea">
-                                    <h4>{{TextContent.ThreeVectorTxtCenterHeader}}</h4><br>
-                                    <p>{{TextContent.ThreeVectorTxtCenterContent}}</p>
-                                </div>
-                            </div>
-                            <!-- End ImageIsUp -->
-                            <!-- ImageIsDown -->
-                            <div class="col-sm-4">
-                                <div class="ThreeSetImgTxtTxtArea">
-                                    <h4>{{TextContent.ThreeVectorTxtRightHeader}}</h4><br>
-                                    <p>{{TextContent.ThreeVectorTxtRightContent}}</p>
-                                </div>
-                                <div class="ThreeSetImgTxtImgArea"><img class="ThreeSetImgTxtImg" src="img/img3.jpg"></div>
-                            </div>
-                            <!-- End ImageIsDown -->
-                        </div>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
-            </div>
-            <!-- End 3-set ImageTextBoxes -->
+        <!-- Main Content Section -->
+        <div ng-controller="TemplateController">
+            <div ng-include="Content"></div>
         </div>
-        <!-- End Main Menu -->
+        <!-- End Main Content Section -->
         
         <!-- Footer -->
         <div class="container-fluid BackgroundLightGreen hidden-xs" ng-controller="AngFooterController">
@@ -148,34 +72,62 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2 FooterColumn">
                     <div class="row FooterHeader"><h4>{{TextContent.Company}}</h4></div>
-                    <div class="row FooterElement"><small>{{TextContent.AboutUs}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.OurTeam}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.MarketNews}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.ContactUs}}</small></div>
+                    <div class="row FooterElement" ng-click="InternalLink('about')">
+                        <small class="pointer">{{TextContent.AboutUs}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('ourteam')">
+                        <small class="pointer">{{TextContent.OurTeam}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('market')">
+                        <small class="pointer">{{TextContent.MarketNews}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('contact')">
+                        <small class="pointer">{{TextContent.ContactUs}}</small>
+                    </div>
                 </div>
                 <div class="col-sm-2 FooterColumn">
                     <div class="row FooterHeader"><h4>{{TextContent.InvesmentBanking}}</h4></div>
-                    <div class="row FooterElement"><small>{{TextContent.InvesmentSearch}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.DueDiligence}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.LocalRep}}</small></div>
+                    <div class="row FooterElement" ng-click="InternalLink('investmentsearch')">
+                        <small class="pointer">{{TextContent.InvesmentSearch}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('duediligence')">
+                        <small class="pointer">{{TextContent.DueDiligence}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('localrep')">
+                        <small class="pointer">{{TextContent.LocalRep}}</small>
+                    </div>
                 </div>
                 <div class="col-sm-2 FooterColumn">
                     <div class="row FooterHeader"><h4>{{TextContent.Funding}}</h4></div>
-                    <div class="row FooterElement"><small>{{TextContent.Fund}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.MA}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.Readiness}}</small></div>
+                    <div class="row FooterElement" ng-click="InternalLink('fundsearch')">
+                        <small class="pointer">{{TextContent.Fund}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('manda')">
+                        <small class="pointer">{{TextContent.MA}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('readiness')">
+                        <small class="pointer">{{TextContent.Readiness}}</small>
+                    </div>
                 </div>
                 <div class="col-sm-2 FooterColumn">
                     <div class="row FooterHeader"><h4>{{TextContent.Betterment}}</h4></div>
-                    <div class="row FooterElement"><small>{{TextContent.Recovery}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.Development}}</small></div>
-                    <div class="row FooterElement"><small>{{TextContent.FundingTxt}}</small></div>
+                    <div class="row FooterElement" ng-click="InternalLink('recovery')">
+                        <small class="pointer">{{TextContent.Recovery}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('development')">
+                        <small class="pointer">{{TextContent.Development}}</small>
+                    </div>
+                    <div class="row FooterElement" ng-click="InternalLink('funding')">
+                        <small class="pointer">{{TextContent.FundingTxt}}</small>
+                    </div>
                 </div>
                 <div class="col-sm-2"></div>
                 
                 
                 <div class="row FooterLineSeperator"></div>
-                <div class="row languageDecider FontWhite"><p><span ng-click="ChangeLanguage('en')">English</span> | <span ng-click="ChangeLanguage('he')">Hebrew</span></p></div>
+                <div class="row languageDecider FontWhite">
+                    <p><span class="pointer" ng-click="ChangeLanguage('en')">English</span> | <span class="pointer" ng-click="ChangeLanguage('he')">Hebrew</span></p>
+                </div>
                 <div class="row">
                     <h6>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> {{TextContent.CopyRight}}</h6>
                 </div>

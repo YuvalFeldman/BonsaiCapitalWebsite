@@ -9,7 +9,7 @@ var port = 32528;
 
 app.use(express.static(__dirname + '/www'));
 
-app.get('/', MainWebsite);
+app.get('/*', MainWebsite);
 
 function MainWebsite(req, res) {
     fs.readFile('www/index.html', function(error, data){
@@ -21,8 +21,6 @@ function MainWebsite(req, res) {
    		}
     });
 }
-
-
 
 app.listen(port, function () { 
   console.log('Listening');
