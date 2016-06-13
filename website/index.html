@@ -27,6 +27,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap-dialog.js"></script>
         <script src="js/Carousel.js"></script>
+        <script src="js/MobileMenu.js"></script>
         <script src="js/AngTopController.js"></script>
         <script src="js/AngTemplateController.js"></script>
         <script src="js/AngFooterController.js"></script>
@@ -63,8 +64,48 @@
                     </div>
                 </div>
             </div>
+            <nav class="visible-xs" id="MobileMenuHolder">
+              <ul ng-class="mobileMenuClass">
+
+                <!--Include your navigation here-->
+                <li class="text-right"><a href="#" id="nav-close">X</a></li>
+                <li><a href="#" ng-click="InternalLink('index')" id="nav-close">{{TextContent.home}} <span class="icon"></span></a></li>
+                <li><a href="#" ng-click="InternalLink('about')" id="nav-close">{{TextContent.about}} <span class="icon"></span></a></li>
+                <li><a href="#" ng-click="InternalLink('team')" id="nav-close">{{TextContent.team}} <span class="icon"></span></a></li>
+                <li><a href="#">{{TextContent.InvesmentBanking}}</a>
+                  <ul class="list-unstyled">
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('investmentsearch')" id="nav-close">{{TextContent.InvesmentSearch}} <span class="icon"></span></a></li>
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('duediligence')" id="nav-close">{{TextContent.DueDiligence}} <span class="icon"></span></a></li>
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('localrep')" id="nav-close">{{TextContent.LocalRep}} <span class="icon"></span></a></li>
+                  </ul>
+                </li>
+                <li><a href="#">{{TextContent.Funding}}</a>
+                  <ul class="list-unstyled">
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('Funding')" id="nav-close">{{TextContent.Fund}} <span class="icon"></span></a></li>
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('manda')" id="nav-close">{{TextContent.MA}} <span class="icon"></span></a></li>
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('readiness')" id="nav-close">{{TextContent.Readiness}} <span class="icon"></span></a></li>
+                  </ul>
+                </li>
+                <li><a href="#">{{TextContent.Betterment}}</a>
+                  <ul class="list-unstyled">
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('recovery')" id="nav-close">{{TextContent.Recovery}} <span class="icon"></span></a></li>
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('development')" id="nav-close">{{TextContent.Development}} <span class="icon"></span></a></li>
+                      <li class="sub-nav"><a href="#" ng-click="InternalLink('funding')" id="nav-close">{{TextContent.FundingTxt}} <span class="icon"></span></a></li>
+                  </ul>
+                </li>
+                <li><a href="#" ng-click="InternalLink('market')" id="nav-close">{{TextContent.market}} <span class="icon"></span></a></li>
+                <li><a href="#" ng-click="InternalLink('contact')" id="nav-close">{{TextContent.contact}} <span class="icon"></span></a></li>
+                <li><a href="#">{{TextContent.Language}}</a>
+                  <ul class="list-unstyled">
+                      <li class="sub-nav"><a href="#" ng-click="ChangeLanguage('en'); ChangeMobileMenuLanguage()" id="nav-close">{{TextContent.englsh}} <span class="icon"></span></a></li>
+                      <li class="sub-nav"><a href="#" ng-click="ChangeLanguage('he'); ChangeMobileMenuLanguage()" id="nav-close">{{TextContent.hebrew}} <span class="icon"></span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <img id="nav-expander" class="MenuIcon visible-xs" src="img/menuIcon.svg">
         </div>
-        <!-- End Main Menu -->
+       <!-- End Main Menu -->
         
         <!-- Main Content Section -->
         <div class="MainPage" ng-controller="TemplateController">
@@ -76,7 +117,7 @@
         <div class="container-fluid BackgroundLightGreen" ng-controller="AngFooterController">
             <div class="row TrajanFont Footer text-center FontWhite">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-2 FooterColumn">
+                <div class="col-sm-2 FooterColumn hidden-xs">
                     <div class="row FooterHeader"><h4>{{TextContent.Company}}</h4></div>
                     <div class="row FooterElement" ng-click="InternalLink('about')">
                         <small class="pointer">{{TextContent.AboutUs}}</small>
@@ -91,7 +132,7 @@
                         <small class="pointer">{{TextContent.ContactUs}}</small>
                     </div>
                 </div>
-                <div class="col-sm-2 FooterColumn">
+                <div class="col-sm-2 FooterColumn hidden-xs">
                     <div class="row FooterHeader"><h4>{{TextContent.InvesmentBanking}}</h4></div>
                     <div class="row FooterElement" ng-click="InternalLink('investmentsearch')">
                         <small class="pointer">{{TextContent.InvesmentSearch}}</small>
@@ -103,7 +144,7 @@
                         <small class="pointer">{{TextContent.LocalRep}}</small>
                     </div>
                 </div>
-                <div class="col-sm-2 FooterColumn">
+                <div class="col-sm-2 FooterColumn hidden-xs">
                     <div class="row FooterHeader"><h4>{{TextContent.Funding}}</h4></div>
                     <div class="row FooterElement" ng-click="InternalLink('fundsearch')">
                         <small class="pointer">{{TextContent.Fund}}</small>
@@ -115,7 +156,7 @@
                         <small class="pointer">{{TextContent.Readiness}}</small>
                     </div>
                 </div>
-                <div class="col-sm-2 FooterColumn">
+                <div class="col-sm-2 FooterColumn hidden-xs">
                     <div class="row FooterHeader"><h4>{{TextContent.Betterment}}</h4></div>
                     <div class="row FooterElement" ng-click="InternalLink('recovery')">
                         <small class="pointer">{{TextContent.Recovery}}</small>
@@ -129,7 +170,9 @@
                 </div>
                 <div class="col-sm-2"></div>
                 
-                
+                <div class="row visible-xs">
+                    <h5>BonsaiCapital</h5>
+                </div>
                 <div class="row FooterLineSeperator"></div>
                 <div class="row">
                     <h6>Copyright <span class="glyphicon glyphicon-copyright-mark"></span> {{TextContent.CopyRight}}</h6>

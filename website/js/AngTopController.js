@@ -44,6 +44,23 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
         services:"Our Services",
         market:"Market News",
         contact:"Contact Us",
+        Company:"Company",
+        InvesmentBanking:"Investment Banking",
+        Funding:"Funding",
+        Betterment:"Betterment",
+        InvesmentSearch:"Investment Search",
+        DueDiligence:"Due Diligent Process",
+        LocalRep:"Investor's Local Rep",
+        Fund:"Fund Search",
+        MA:"M&A",
+        Readiness:"Funding Process Readiness",
+        Recovery:"Steering To Recovery",
+        Development:"Business Development",
+        FundingTxt:"Funding",
+        Language:"Change Language",
+        hebrew:"Hebrew",
+        englsh:"English",
+        home:"Home"
     };
     $scope.TextContentHe = {
         about:'אודותינו', 
@@ -51,6 +68,23 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
         services:"השירותים שלנו",
         market:"חדשות",
         contact:"צור קשר",
+        Company:"חברה",
+        InvesmentBanking:"בנקאות השקעות",
+        Funding:"בנקאות השקעות",
+        Betterment:"שבח",
+        InvesmentSearch:"חיפוש השקעות",
+        DueDiligence:"תהליך דיליג'נט בשל",
+        LocalRep:"נציג משקיעים מקומי",
+        Fund:"חיפוש קרן",
+        MA:"M&A",
+        Readiness:"נכונות מימון",
+        Recovery:"הכוונה לשיקום",
+        Development:"פיתוח עסקי",
+        FundingTxt:"מימון",
+        Language:"החלף שפה",
+        hebrew:"עברית",
+        englsh:"אנגלית",
+        home:"בית"
     };
     
     $scope.TextContent = $scope.TextContentEn;
@@ -71,7 +105,21 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
         $scope.UpdateSectionLanguage(langauge);
         $rootScope.$emit("UpdateAllLanguages", {});
     }
-
+    
+    $scope.mobileMenuClassEn = "list-unstyled main-menu EnglishLeftToRight";
+    $scope.mobileMenuClassHe = "list-unstyled main-menu HebrewRightToLeft";
+    
+    $scope.ChangeMobileMenuLanguage = function(){
+        switch(GlobalData.GetLanguage()){
+            case 'he':
+                $scope.mobileMenuClass = $scope.mobileMenuClassHe;
+                break;
+            case 'en':
+                $scope.mobileMenuClass = $scope.mobileMenuClassEn;
+                break;
+        }
+    }
     
     $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
+    $scope.ChangeMobileMenuLanguage(GlobalData.GetLanguage());
 });
