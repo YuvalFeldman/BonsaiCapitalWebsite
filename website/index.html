@@ -34,7 +34,7 @@
     </head>
     <body class="Not_Highlightable" ng-app="website">
         <!-- Main Menu -->
-        <div class="container-fluid hidden-xs MainHeader" ng-controller="TopController">
+        <div class="container-fluid MainHeader" ng-controller="TopController">
             <div class="row TrajanFont">
                 <div class="col-sm-4 text-center MenuOption CenterMenuOptionsHorizontaly">
                     <h1 class="pointer" ng-click="InternalLink('index')">
@@ -42,7 +42,7 @@
                     </h1>
                 </div>
 
-                <div class="row col-sm-8">
+                <div class="row col-sm-8 hidden-xs">
                     <div class="col-sm-2 text-center MenuOption CenterMenuOptionsHorizontaly">
                         <h5 class="pointer"><span class="pointer" ng-click="ChangeLanguage('en')"><img class="languageImage" src="img/En.jpg"></span> | <span class="pointer" ng-click="ChangeLanguage('he')"><img class="languageImage" src="img/He.jpg"></span></h5>
                     </div>
@@ -73,7 +73,7 @@
         <!-- End Main Content Section -->
         
         <!-- Footer -->
-        <div class="container-fluid BackgroundLightGreen hidden-xs" ng-controller="AngFooterController">
+        <div class="container-fluid BackgroundLightGreen" ng-controller="AngFooterController">
             <div class="row TrajanFont Footer text-center FontWhite">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-2 FooterColumn">

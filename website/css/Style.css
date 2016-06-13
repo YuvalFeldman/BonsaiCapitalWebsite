@@ -191,6 +191,25 @@ body{
     height: auto;
     width: 100%;
 }
+.ThreeSetImgTxtSetMobile{
+    padding: 0 0 3em 0;
+    margin: 0;
+    text-align: center;
+}
+.ThreeSetImgTxtTxtAreaMobile{
+    padding: 0 10% 0 10%;
+    margin: 0;
+
+}
+.ThreeSetImgTxtImgAreaMobile{
+    border-radius: 6px;
+    padding: 0;
+    margin: 0;
+}
+.ThreeSetImgTxtImgMobile{
+    height: auto;
+    width: 80%;
+}
 
 /*
  * Team page
