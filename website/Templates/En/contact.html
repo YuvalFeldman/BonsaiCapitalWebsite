@@ -32,7 +32,7 @@
                         <!-- end User Message -->
                         <br>
                         <!-- submit button -->
-                        <input class="btn btn-default" type="submit" ng-disabled="Connect_Mail_Form.user.$dirty && Connect_Mail_Form.user.$invalid || Connect_Mail_Form.email.$dirty && Connect_Mail_Form.email.$invalid || !Connect_Mail_Form.user.$dirty || !Connect_Mail_Form.email.$dirty" ng-click="submitMail()">
+                        <input class="btn btn-default" type="submit" ng-disabled="Connect_Mail_Form.user.$dirty && Connect_Mail_Form.user.$invalid || Connect_Mail_Form.email.$dirty && Connect_Mail_Form.email.$invalid || !Connect_Mail_Form.user.$dirty || !Connect_Mail_Form.email.$dirty" ng-click="submitMail()" value="Send">
                         <!-- end submit button -->
                     </form>
                     <div class="alert alert-success" ng-show="mailSent">
