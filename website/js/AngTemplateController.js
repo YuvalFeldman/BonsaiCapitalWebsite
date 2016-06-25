@@ -54,6 +54,7 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
     $scope.SubscriptionData = {name: "", mail: "", message: ""};
     
     $scope.mailSent = false;
+    $scope.subSent = true;
     
     $scope.submitMail = function(){
         
@@ -66,6 +67,35 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
           headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
          });
     }
+    
+    $scope.contactMe = function(){
+        BootstrapDialog.show({
+            title: 'Coming soon',
+            message: 'Enter your email and we will get back to you soon:<br><input type="text" class="form-control">',
+            buttons: [{
+                label: 'Send',
+                cssClass: 'btn-primary subscribeSubmit',
+                action: function(dialog){
+                    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    if(re.test(dialog.getModalBody().find('input').val())){
+                    dialog.setMessage('Your request has been sent and a representative will contact you, Thank you!');
+                    }
+                    else{
+                    dialog.setMessage('Enter your email and we will get back to you soon:<br><input type="text" class="form-control"><br>Please enter a valid email adress');
+                    }
+                }
+            },
+            {
+                label: 'close',
+                cssClass: 'btn-primary subscribeClose',
+                action: function(dialog){
+                    dialog.close();
+                }
+            }]
+
+        });
+    }
+    
     $scope.submitSubscribe = function(typeOfSub, mail){
         
         $scope.SubscriptionSent = true;

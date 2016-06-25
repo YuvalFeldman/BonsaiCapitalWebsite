@@ -129,28 +129,6 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
         });
     }
     
-    $scope.subme = function(){
-        BootstrapDialog.show({
-            title: 'Coming soon',
-            message: 'Enter your email and we will get back to you soon:<br><input type="text" class="form-control">',
-            buttons: [{
-                label: 'Send',
-                cssClass: 'btn-primary subscribeSubmit',
-                action: function(dialog){
-                    dialog.close();
-                }
-            },
-            {
-                label: 'close',
-                cssClass: 'btn-primary subscribeClose',
-                action: function(dialog){
-                    dialog.close();
-                }
-            }]
-
-        });
-    }
-    
     $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
     $scope.ChangeMobileMenuLanguage(GlobalData.GetLanguage());
 });

@@ -416,16 +416,19 @@ body.nav-expanded {
  * Footer
  */
 .subscribeSubmit{
+    border: 0;
     background-color: #4a9d4f;
 }
 .subscribeSubmit:hover{
     background-color: #0e5c11;
 }
 .subscribeClose{
-    background-color: #4a9d4f;
+    border: 0;
+    background-color: white;
+    color: black;
 }
 .subscribeClose:hover{
-    background-color: #0e5c11;
+    background-color: #a1aea5;
 }
 
 /*
