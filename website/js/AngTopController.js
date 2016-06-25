@@ -41,7 +41,8 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
     $scope.TextContentEn = {
         about:'About Us', 
         team:"Our Team",
-        services:"Our Services",
+        InvestmentBanking:"Investment banking",
+        Corporate:"Corporate service",
         market:"Market News",
         contact:"Contact Us",
         Company:"Company",
@@ -65,7 +66,8 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
     $scope.TextContentHe = {
         about:'אודותינו', 
         team:"הצוות שלנו",
-        services:"השירותים שלנו",
+        InvestmentBanking:"בנקאות השקעות",
+        Corporate:"שירות תאגידי",
         market:"חדשות",
         contact:"צור קשר",
         Company:"חברה",
@@ -118,6 +120,35 @@ app.controller('TopController', function ($scope, $window, $location, $rootScope
                 $scope.mobileMenuClass = $scope.mobileMenuClassEn;
                 break;
         }
+    }
+    
+    $scope.notAvailable = function(){
+        BootstrapDialog.show({
+            title: 'Coming soon',
+            message: 'This page is under construction and will be available soon!'
+        });
+    }
+    
+    $scope.subme = function(){
+        BootstrapDialog.show({
+            title: 'Coming soon',
+            message: 'Enter your email and we will get back to you soon:<br><input type="text" class="form-control">',
+            buttons: [{
+                label: 'Send',
+                cssClass: 'btn-primary subscribeSubmit',
+                action: function(dialog){
+                    dialog.close();
+                }
+            },
+            {
+                label: 'close',
+                cssClass: 'btn-primary subscribeClose',
+                action: function(dialog){
+                    dialog.close();
+                }
+            }]
+
+        });
     }
     
     $scope.UpdateSectionLanguage(GlobalData.GetLanguage());

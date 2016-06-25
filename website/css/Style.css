@@ -95,7 +95,7 @@ body{
     margin: 0;
 }
 .class="languageImage"{
-    width: 14px;
+    width: 1em;
     height: auto;
 }
 
@@ -410,6 +410,22 @@ body.nav-expanded {
     z-index: 20;
     top: 1em;
     right: 2em;
+}
+
+/*
+ * Footer
+ */
+.subscribeSubmit{
+    background-color: #4a9d4f;
+}
+.subscribeSubmit:hover{
+    background-color: #0e5c11;
+}
+.subscribeClose{
+    background-color: #4a9d4f;
+}
+.subscribeClose:hover{
+    background-color: #0e5c11;
 }
 
 /*

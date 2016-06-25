@@ -66,6 +66,12 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
          });
     }
 
-
+    $scope.notAvailable = function(){
+        BootstrapDialog.show({
+            title: 'Coming soon',
+            message: 'This page is under construction and will be available soon!'
+        });
+    }
+    
     $scope.UpdateSectionLanguage(GlobalData.GetLanguage());
 });
