@@ -51,12 +51,27 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
     }
     
     $scope.mailContent = {name: "", mail: "", message: ""};
+    $scope.SubscriptionData = {name: "", mail: "", message: ""};
     
     $scope.mailSent = false;
     
     $scope.submitMail = function(){
         
         $scope.mailSent = true;
+        
+        $http({
+          method  : 'POST',
+          url     : '/php/contact-form-handler.php',
+          data    : $scope.mailContent,
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         });
+    }
+    $scope.submitSubscribe = function(typeOfSub, mail){
+        
+        $scope.SubscriptionSent = true;
+        $scope.SubscriptionData['name'] = typeOfSub;
+        $scope.SubscriptionData['mail'] = mail;
+        $scope.SubscriptionData['message'] = 'This user has requested to be contacted for' + typeOfSub;
         
         $http({
           method  : 'POST',
