@@ -13,15 +13,18 @@ app.controller('AngFooterController', function ($scope, $window, $rootScope, Glo
         OurTeam:"Our Team",
         MarketNews:"Market News",
         ContactUs:"Contact Us",
-        InvesmentSearch:"Investment Search",
+        dealflow:"Deal-flow Development",
         DueDiligence:"Due Diligent Process",
         LocalRep:"Investor's Local Rep",
-        Fund:"Fund Search",
+        Fund:"Fund Raising",
         MA:"M&A",
         Readiness:"Funding Process Readiness",
         Recovery:"Steering To Recovery",
         Development:"Business Development",
         FundingTxt:"Funding",
+        More:"Engage",
+        Corporate:"Corporate Funding",
+        International:"International BD",
         CopyRight:"2016 Bonsai Capital All Rights Reserved"
     };
     $scope.TextContentHe = {

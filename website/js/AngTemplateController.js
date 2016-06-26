@@ -2,6 +2,14 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
     $scope.EnglishTemplates = { 
         index: 'Templates/En/index.html',
         about: 'Templates/En/about.html',
+        banking: 'Templates/En/banking.html',
+        dealflow: 'Templates/En/dealflow.html',
+        duediligence: 'Templates/En/duediligence.html',
+        localrep: 'Templates/En/localrep.html',
+        corporate: 'Templates/En/corporate.html',
+        fundsearch: 'Templates/En/fundsearch.html',
+        manda: 'Templates/En/manda.html',
+        international: 'Templates/En/international.html',
         contact: 'Templates/En/contact.html',
         team: 'Templates/En/team.html'
     };
@@ -11,6 +19,9 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
         contact: 'Templates/He/contact.html',
         team: 'Templates/He/team.html'
     };
+    
+    $scope.uriMail = "Show Uri's email";
+    $scope.eranMail = "Show Eran's email";
     
     $scope.ChosenTemplate = $scope.EnglishTemplates;
     $scope.Content = $scope.ChosenTemplate['index'];
@@ -24,7 +35,11 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
     });
     
     $scope.UpdateSectionContent = function(page){
+                console.log(page);
+
         if($scope.ChosenTemplate.hasOwnProperty(page)){
+                    console.log(page);
+
             $scope.Content = $scope.ChosenTemplate[page];
         }
         else{
@@ -47,7 +62,7 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
     
     $scope.InternalLink = function(link){
         GlobalData.SetPage(link);
-        $scope.UpdateSectionLanguage(GlobalData.GetPage());
+        $rootScope.$emit("ChangePageTemplate", {});
     }
     
     $scope.mailContent = {name: "", mail: "", message: ""};
@@ -115,6 +130,17 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
             title: 'Coming soon',
             message: 'This page is under construction and will be available soon!'
         });
+    }
+    
+    $scope.ShowMail = function(pMail){
+        switch(pMail){
+            case 'uri':
+                $scope.uriMail = "Uri@bonsaiCapital.net";
+                break;
+            case 'eran':
+                $scope.eranMail = "Eran@bonsaiCapital.net";
+                break;
+        }
     }
     
     $scope.UpdateSectionLanguage(GlobalData.GetLanguage());

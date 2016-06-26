@@ -50,6 +50,9 @@ a{
 .BackgroundLightGreen{
     background-color: #4a9d4f;
 }
+.listDot{
+    list-style-type: circle;
+}
 
 /*
  * Web page
@@ -112,6 +115,9 @@ body{
 }
 .MainPage{
     min-height: 80%;
+}
+.MainContentPadding{
+    margin-top: 3em;
 }
 
 /*
@@ -193,6 +199,7 @@ body{
 .ThreeSetImgTxtImg{
     height: auto;
     width: 100%;
+    border-radius: 12px;
 }
 .ThreeSetImgTxtSetMobile{
     padding: 0 0 3em 0;
@@ -218,7 +225,7 @@ body{
  * Team page
  */
 .profileImage{
-    width: 15em;
+    width: 12em;
     height: auto;
     border-radius: 6px;
 }
