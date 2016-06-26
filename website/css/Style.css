@@ -21,6 +21,9 @@
 .FontWhite{
     color: #ffffff;
 }
+.FontRed{
+    color: #A23734;
+}
 .Not_Highlightable{
     cursor:default;
 }
