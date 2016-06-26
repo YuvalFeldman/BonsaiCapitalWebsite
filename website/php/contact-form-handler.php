@@ -7,7 +7,8 @@
 <?php 
     $_POST = json_decode(file_get_contents('php://input'), true);
 
-    $myemail = 'uri@bonsaicapital.net';
+    $myemail = 'feldmanyuval@gmail.com';
+//    $myemail = 'uri@bonsaicapital.net';
 
     $name = $_POST['name']; 
     $email_address = $_POST['mail']; 

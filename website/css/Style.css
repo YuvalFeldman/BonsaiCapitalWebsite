@@ -422,6 +422,9 @@ body.nav-expanded {
 .subscribeSubmit:hover{
     background-color: #0e5c11;
 }
+.subscribeSubmitHidden{
+    visibility: hidden;
+}
 .subscribeClose{
     border: 0;
     background-color: white;
