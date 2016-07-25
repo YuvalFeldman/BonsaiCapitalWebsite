@@ -22,6 +22,7 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
     
     $scope.uriMail = "Show Uri's email";
     $scope.eranMail = "Show Eran's email";
+    $scope.KennyMail = "Show Kenny's email";
     
     $scope.ChosenTemplate = $scope.EnglishTemplates;
     $scope.Content = $scope.ChosenTemplate['index'];
@@ -139,6 +140,9 @@ app.controller('TemplateController', function ($scope, $rootScope, $http, Global
                 break;
             case 'eran':
                 $scope.eranMail = "Eran@bonsaiCapital.net";
+                break;
+            case 'Kenny':
+                $scope.KennyMail = "Kenny@bonsaicapital.net";
                 break;
         }
     }

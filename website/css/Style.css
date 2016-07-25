@@ -232,6 +232,14 @@ body{
 .imageColumn{
     text-align: center;
 }
+.TeamMemberName{
+    padding-top: 0;
+    margin-top: 0;
+}
+.AboutMemberTitle{
+    padding-top: 0;
+    color: grey;
+}
 /*
  * Main Content Sections
  */
